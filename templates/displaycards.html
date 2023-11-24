@@ -1,0 +1,27 @@
+{% from 'utility.html' import header,meta,jslinks,stylelink %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{meta()}}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/welcomesignup.css')}}">
+</head>
+
+
+<body onmousedown="return false" onselectstart="return false"> 
+    {{header()}}
+    {{jslinks()}}   
+    <div class="container" id="div1">
+        <img src="{{url_for('static',filename='assets/Welcome.png')}}" alt="">
+        <p>You are in! Welcome 🙏🏻</p>
+        <div class="text">
+            <p>Thanks.
+                Hope you have a good time here. Let me give you a tour of what you'll be doing here.</p>
+                <p>There are 4 sections<br> where you'll be<br> working.</p>
+        </div>
+        <a href="{{url_for('info1')}}"><button class="btn_2" >click to know</button></a>
+    </div>
+</body>
+
+</html>

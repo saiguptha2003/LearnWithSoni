@@ -1,0 +1,97 @@
+{% from 'utility.html' import header,meta,jslinks,stylelink,example,userheader,footer %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{meta()}}
+    <title>Document</title>
+    {{stylelink()}}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/dashboard.css')}}">
+</head>
+<body>
+    {{ userheader()}}
+    <div class="column">
+    <div class="container">
+        <div class="card">
+            <h3>Reading Compreshension</h3>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Sno</th>
+                    <th scope="col">Paragraphs solved</th>
+                    <th scope="col">Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% if AudioComData != none %}
+                    {%for i in ReadComData%}
+                    {% if ReadComdata !=none %}
+                    <tr>
+                        <th scope="row">{{ loop.index}}</th>
+                        <td>{{i['paragraph_id']}}</td>
+                        <td>{{i['score']}}</td>
+                    </tr>
+                    {%else%}
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>None</td>
+                        <td>0</td>
+                    </tr>
+                    {%endif%}
+                    {%endfor%}
+                    {%else%}
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>None</td>
+                        <td>0</td>    
+                    </tr>
+                    {%endif%}  
+                </tbody>
+                </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h3>Audio Compreshension</h3>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Sno</th>
+                    <th scope="col">Paragraphs solved</th>
+                    <th scope="col">Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% if AudioComData != none %}
+                    {% for i in AudioComData %}
+                    {% if ReadComdata !=none %}
+                    <tr>
+                        <th scope="row">{{ loop.index}}</th>
+                        <td>{{i['paragraph_id']}}</td>
+                        <td>{{i['score']}}</td>
+                    </tr>
+                    {%else%}
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>None</td>
+                        <td>0</td>
+                    </tr>
+                    {%endif%}
+                    {%endfor%}
+                    {%else%}
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>None</td>
+                        <td>0</td>    
+                    </tr>
+                    {%endif%}                                                                                  
+                </tbody>
+                </table>
+        </div>
+    </div>
+</div>
+    {{jslinks()}}
+    {{footer()}}
+    </body>
+</html>

@@ -1,0 +1,32 @@
+{% from 'utility.html' import header,meta,jslinks,stylelink ,footer%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{meta()}}
+    <title>LWS-Home</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/homepage.css')}}">
+    
+
+</head>
+
+<body>
+    {{header()}}
+    <div class="container">
+        <div class="column">
+            <img src="{{url_for('static',filename='assets/Reading_glasses_bro.svg')}}" alt="">
+        </div>
+    </div>
+    <div class="container">
+        <h3 class="title">Welcome. I am Soni and this is my app, Learning with Soni. Hone your language and presentation with plenty
+            of practice here.</h3>
+
+    </div>
+
+    {{jslinks()}}
+    {{footer()}}
+</body>
+
+</html>

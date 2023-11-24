@@ -1,0 +1,48 @@
+{% from 'utility.html' import Adminheader,meta,jslinks,stylelink ,footer%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{meta()}}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/adminr.css')}}">
+    <title>LWS-Admin R</title>
+</head>
+
+<body>
+    {{Adminheader()}}
+        <div class="container_1">
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+            <table class="table"  style="overflow-y:scroll">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Sno</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Paragraph_Id</th>
+                        <th scope="col">Score</th>
+                        <th scope="col">Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in CommentsDetails %}
+                    <tr>
+                        <th scope="row">{{loop.index}}</th>
+                        <td>{{user['Email']}}</td>
+                        <td>{{user['ParagraphId']}}</td>
+                        <td>{{user['Score']}}</td>
+                        <td>{{user['Feedback']}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+
+            </table>
+        </div>
+        </div>
+    {{jslinks()}}
+    {{stylelink()}}
+
+</body>
+
+</html>

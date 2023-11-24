@@ -1,0 +1,161 @@
+{% macro meta() %}
+
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel = "icon" href = "{{url_for('static',filename='assets/kalpa_4.png')}}"
+        type = "image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{url_for('static',filename='css/footer.css')}}">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+
+{% endmacro %}
+
+{% macro header() %}
+<header>
+    <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="#">LearningWithSoni</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"> </i></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav ">
+            <a class="nav-item nav-link active" href="{{url_for('home')}}" id="home">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="mailto: saiguptha_v@srmap.edu.in" id="contact">Contact</a>
+            <a class="nav-item nav-link active" href="{{url_for('register')}}" id="register">Register</a>
+            <a class="nav-item nav-link active" href="{{url_for('login')}}" id="login">Login</a>
+          </div>
+        </div>
+      </nav>
+</header>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{% endmacro %}
+
+{% macro jslinks() %}
+
+
+
+{% endmacro %}
+
+{% macro stylelink(id) %}
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/{{id}}.css')}}">
+
+{% endmacro %}
+
+
+
+{% macro userheader() %}
+<header>
+    <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="#">LearningWithSoni  <span>Dashboard</span> <span class="s"></span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"> </i></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav ">
+            <a class="nav-item nav-link active" href="{{url_for('dashboard')}}" id="dashboard">Dashboard <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="{{url_for('Exam')}}" id="Read" onclick="fullscreen()">Reading Compreshension</a>
+            <a class="nav-item nav-link active" href="{{url_for('audioExam')}}" id="Listen">Listening Compreshension</a>
+            <a class="nav-item nav-link active" href="{{url_for('logout')}}" id="logout">Logout</a>
+          </div>
+        </div>
+      </nav>
+</header>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{% endmacro %}
+
+
+{% macro ReadExamHeader() %}
+<header>
+    <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="#">LearningWithSoni  <span>Reading Compreshension</span> <span class="s"></span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"> </i></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav ">
+            <a class="nav-item nav-link active" href="{{url_for('dashboard')}}" id="dashboard">Dashboard <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="{{url_for('Exam')}}" id="Read" onclick="fullscreen()">Reading Compreshension</a>
+            <a class="nav-item nav-link active" href="{{url_for('logout')}}" id="logout">Logout</a>
+          </div>
+        </div>
+      </nav>
+</header>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{% endmacro %}
+
+{% macro AudioExamHeader() %}
+<header>
+    <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="#">LearningWithSoni  <span>Listening Compreshension</span> <span class="s"></span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"> </i></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav ">
+            <a class="nav-item nav-link active" href="{{url_for('dashboard')}}" id="dashboard">Dashboard <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="{{url_for('audioExam')}}" id="Listen" onclick="fullscreen()">Listening Compreshension</a>
+            <a class="nav-item nav-link active" href="{{url_for('logout')}}" id="logout">Logout</a>
+          </div>
+        </div>
+      </nav>
+</header>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{% endmacro %}
+
+{%macro footer()%}
+<div class="footer-basic">
+  <footer>
+      <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="{{url_for('home')}}">Home</a></li>
+          <li class="list-inline-item"><a href="https://saiguptha2003.github.io/Panduranga_Sai_Guptha-/">Services</a></li>
+          <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+      </ul>
+      <div class="text">
+      <p class="text-center">Designed by ATG SOLUTIONS</p>
+      <p class="text-center">Developer:V D Panduranga Sai Guptha</p>
+      <p class="text-center"><a href="https://saiguptha2003.github.io/Panduranga_Sai_Guptha-/">Resume</a><a href="https://github.com/saiguptha2003">Github</a></p>
+  </div>
+  </footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+{% endmacro %}
+
+
+{% macro Adminheader() %}
+<header>
+    <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="#">LearningWithSoni  <span>Admin Portal</span> <span class="s"></span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"> </i></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav ">
+            <a class="nav-item nav-link active" href="{{url_for('Admindashboard')}}" id="dashboard">Dashboard <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="{{url_for('ListeningDetails')}}" id="ld">Listening Analytics</a>
+            <a class="nav-item nav-link active" href="{{url_for('ReadingDetails')}}" id="rd">Reading Analytics</a>
+            <a class="nav-item nav-link active" href="{{url_for('logout')}}" id="logout">Logout</a>
+          </div>
+        </div>
+      </nav>
+</header>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{% endmacro %}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Error - Page Not Found</title>
+  <link rel="icon" href="{{url_for('static',filename='assets/kalpa_4.png')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .content {
+      text-align: center;
+      color: #fff;
+      z-index: 1;
+    }
+
+    .content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #2B65EC;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 10px rgba(43, 101, 236);
+    }
+
+    .button:hover {
+      background-color: #1F3F9E;
+    }
+
+    .button i {
+      margin-right: 8px;
+    }
+
+    @media screen and (min-width: 768px) {
+      .buttons {
+        flex-direction: row;
+      }
+    }
+
+    .social-icons {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #fff;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #2B65EC;
+    }
+
+    .social-icons {
+      margin-top: 2rem;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      color: #fff;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #2B65EC;
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px rgba(43, 101, 236);
+      }
+
+      50% {
+        box-shadow: 0 0 20px rgba(43, 101, 236);
+      }
+
+      100% {
+        box-shadow: 0 0 10px rgba(43, 101, 236);
+      }
+    }
+
+    .glow {
+      animation: glow 3s infinite;
+    }
+  </style>
+</head>
+
+<body onmousedown="return false" onselectstart="return false">
+  <video class="background-video" autoplay muted loop>
+    <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>404 - Page Not Found</h1>
+    <p>The page you are looking for could not be found.</p>
+    <div class="buttons">
+      <a href="{{url_for('home')}}" class="button glow"><i class="fas fa-home"></i> Go to Home</a>
+    </div>
+    <div class="social-icons">
+      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+{% from 'utility.html' import header,meta,jslinks,stylelink,footer%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{meta()}}
+    <title>LWS-Register</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/register.css')}}">
+
+</head>
+
+<body>
+    {{header()}}
+    {{jslinks()}}
+    <div class="container">
+        <form class="form_1" method="POST">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" id="text" placeholder="Eg: Soni" name="firstname">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Eg: Soni@srmap.edu.in" name="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="password" name="password">
+            </div>
+            <p>after sigup please check your email and verify your email account</p>
+            <div class="form-group">
+                <button class="btn1" type="submit">
+                    Sign Up
+                </button>
+
+            </div>
+     
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <div class="alert alert-danger" role="alert">
+                <div class=flashes>
+                    {% for message in messages %}
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+            </div>
+                {% block body %}{% endblock %}
+        
+            <div class="form-group">
+                <p>Have an account already? <a href="{{url_for('login')}}">Log in</a></p>
+            </div>
+            
+        </form>
+
+    </div>
+    </div>
+    {{footer()}}
+</body>
+
+</html>

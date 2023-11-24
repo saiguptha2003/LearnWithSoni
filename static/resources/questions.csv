@@ -1,0 +1,6 @@
+question_id,paragraph_id,questions,type,option-1,option-2,option-3,option-4,answers
+q1,man on fire,Which of the following is the most suitable title for the given paragraph?,saq,Thanos,The Eternals,vDeath,"
+Starfox",Thanos
+q2,man on fire,How many powers does Thanos have according to this passage?,sat,,,,,on man file
+q3,man on fire,Give an example of metaphor used in the passage.,saq,"Thanos was born an ugly duckling .
+",Thanos grew up angry and jealous of his attractive and easy-going brother Starfox .,Thanos was exiled from his birthplace and forced to travel the universe.,null,Thanos was born an ugly duckling .

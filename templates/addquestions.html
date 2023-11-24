@@ -1,0 +1,16 @@
+{% from 'utility.html' import header,meta,jslinks,stylelink %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{meta()}}
+    <title>LWS-Home</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/homepage.css')}}">
+
+</head>
+<body onmousedown="return false" onselectstart="return false">
+    {{header()}}
+    {{jslinks()}}
+</body>
+</html>

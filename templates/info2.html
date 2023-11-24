@@ -1,0 +1,24 @@
+{% from 'utility.html' import header,meta,jslinks,stylelink %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{meta()}}
+    <title>LWS-Info2</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/welcomesignup.css')}}">
+</head>
+
+
+<body onmousedown="return false" onselectstart="return false">
+    {{header()}}
+    {{jslinks()}}
+    <div class="container" id="div3">
+        <img src="{{url_for('static',filename='assets/conference.png')}}" alt="">
+        <p style="color: rgb(0,98,209);">Speaking</p>
+        <p>Record your mini speeches to set you on your way to become a great orator! Available only during class hours though.</p>
+        <a href="{{url_for('info3')}}"><button class="btn_1">Next</button></a>
+    </div>
+</body>
+
+</html>

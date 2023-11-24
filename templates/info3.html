@@ -1,0 +1,25 @@
+{% from 'utility.html' import header,meta,jslinks,stylelink %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{{meta()}}
+    <title>LWS-Info3</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/welcomesignup.css')}}">
+</head>
+
+
+<body onmousedown="return false" onselectstart="return false">
+{{header()}}
+{{jslinks()}}
+
+    <div class="container" id="div4">
+        <img src="{{url_for('static',filename='assets/Online test.png')}}" alt="">
+        <p style="color: rgb(0,98,209);">Reading</p>
+        <p>Read about entertainment and technology to get smarter! Available only during class hours though. (Jaldi kisko hai, right?)</p>
+
+        <a href="{{url_for('info4')}}"><button class="btn_1">Next</button></a>
+    </div>
+</body>
+
+</html>

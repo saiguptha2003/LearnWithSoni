@@ -1,0 +1,51 @@
+{% from 'utility.html' import Adminheader,meta,jslinks,stylelink ,footer%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{meta()}}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/admin.css')}}">
+    <title>LWS-Admin</title>
+</head>
+
+<body>
+    {{Adminheader()}}
+
+        <h2>Hi Soni</h2>
+        <h3>Total Students Count : {{usercount}}</h3>
+        <div class="container_1">
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+            <table class="table"  style="overflow-y:scroll">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Sno</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Total(R)</th>
+                        <th scope="col">Total(L)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in userdetails %}
+                    <tr>
+                        <th scope="row">{{loop.index}}</th>
+                        <td>{{user['first-name']}}</td>
+                        <td>{{user['email']}}</td>
+                        <td>{{user['ReadingPassage']|length}}</td>
+                        <td>{{user['AudioPassage']|length}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+
+            </table>
+        </div>
+        </div>
+    {{jslinks()}}
+    {{stylelink()}}
+
+</body>
+
+</html>

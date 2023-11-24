@@ -1,0 +1,26 @@
+
+{% from 'utility.html' import header,meta,jslinks,stylelink %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>LWS-Info4</title>
+    {{meta()}}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/welcomesignup.css')}}">
+</head>
+
+
+<body onmousedown="return false" onselectstart="return false">
+    {{header()}}
+    {{jslinks()}}
+    <div class="container" id="div5">
+        <img class="diary" src="{{url_for('static',filename='assets/Diary-bro 1.png')}}" alt="">
+        <p style="color: rgb(0,98,209);">diary</p>
+        <p>You can record your views about the world ANYTIME or leave questions for me 
+            here. I can try to answer the questions in class. Jot down whatever comes to your mind - a new word, a new question about how to express yourself. Basically everything - because language and communication are connected to everything!</p>
+
+        <a href="{{url_for('login')}}"><button class="btn_1">Next</button></a>
+    </div>
+</body>
+
+</html>

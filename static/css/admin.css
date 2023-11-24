@@ -1,0 +1,45 @@
+.container{
+    width: 100%;
+    margin-right: 20px;
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: #5081db;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h3{
+    font-size: 30px;
+    font-weight: bold;
+    color: #5081db;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.container_1{
+    padding: 40px;
+    overflow-y: scroll;
+    width: 100%;
+   
+    margin-right: 20px;
+}
+.table{
+    background-color: #e3e3e3;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+.my-custom-scrollbar {
+    position: relative;
+    height: 500px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }

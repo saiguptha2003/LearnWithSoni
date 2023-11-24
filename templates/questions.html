@@ -1,0 +1,108 @@
+{% from 'utility.html' import header,meta,jslinks,stylelink,example,ReadExamHeader %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {{meta()}}
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/questions.css')}}" />
+</head>
+
+<body >
+    {{ReadExamHeader()}}
+    <div class="row">
+        <div class="container_1" onmousedown="return false" onselectstart="return false">
+            <h4 class="heading">Paragraph ID: {{f[0]['paragraph_id']}}</h4>
+            <h5 class="note">Read Paragraph and answer the questions which is in right side</h5>
+            <p class="paragraph">{{f[0]['paragraph']}}</p>
+        </div>
+        <div class="container_2">
+            <h4>Questions</h4>
+            {% set count = namespace(value=0) %}
+            <form acttion="{{url_for('Exam')}}" method="POST">
+                {% for i in t %}
+                {% set count.value = count.value + 1 %}
+                <div class="optionandquestion">
+                    <div class="question" onmousedown="return false" onselectstart="return false" >
+                        <p>{{count.value}}. {{i['questions']}}</p>
+                        <p>{{i['question_id']}}</p>
+                    </div>
+                    <div class="options">
+                        {%if i['type']=='saq'%}
+                        <div>
+                            <div class="row">
+                                <input class="radio" type="radio" name="{{i['question_id']}}" id="option_1"
+                                    value="{{i['option-1']}}" />
+                                <label for="option_1" class="label_answers">{{i['option-1']}}</label>
+                            </div>
+                            <div class="row">
+                                <input class="radio" type="radio" name="{{i['question_id']}}" id="option_2"
+                                    value="{{i['option-2']}}" />
+                                <label for="option_2" class="label_answers">{{i['option-2']}}</label>
+                            </div>
+                            <div class="row">
+                                <input class="radio" type="radio" name="{{i['question_id']}}" id="option_3"
+                                    value="{{i['option-3']}}" />
+                                <label for="option_3" class="label_answers">{{i['option-3']}}</label>
+                            </div>
+                            <div class="row">
+                                <input class="radio" type="radio" name="{{i['question_id']}}" id="option_4"
+                                    value="{{i['option-4']}}" />
+                                <label for="option_4" class="label_answers">{{i['option-4']}}</label>
+                            </div>
+                        </div>
+                        {% elif i['type']=='mcq' %}
+                        <div>
+                            <div class="row">
+                                <input class="checkbox" type="checkbox" name="{{i['question_id']}}" id="option_1"
+                                    value="{{i['option-1']}}" />
+                                <label for="option_1" class="label_answers">{{i['option-1']}}</label>
+                            </div>
+                            <div class="row">
+                                <input class="checkbox" type="checkbox" name="{{i['question_id']}}" id="option_2"
+                                    value="{{i['option-2']}}" />
+                                <label for="option_2" class="label_answers">{{i['option-2']}}</label>
+                            </div>
+                            <div class="row">
+                                <input class="checkbox" type="checkbox" name="{{i['question_id']}}" id="option_3"
+                                    value="{{i['option-3']}}" />
+                                <label for="option_3" class="label_answers">{{i['option-3']}}</label>
+                            </div>
+                            <div class="row">
+                                <input class="checkbox" type="checkbox" name="{{i['question_id']}}" id="option_4"
+                                    value="{{i['option-4']}}" />
+                                <label for="option_4" class="label_answers">{{i['option-4']}}</label>
+                            </div>
+                        </div>
+
+                        {% else %}
+                        <div>
+                            <div class="input_answer">
+                                <input type="text" class="input_form" name="{{i['question_id']}}" />
+                            </div>
+                        </div>
+
+                        {%endif%}
+                    </div>
+                </div>
+                {%endfor%}
+                <p class="paragraph">/*Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eos quis rerum
+                    tenetur asperiores, impedit nisi laudantium nemo tempore suscipit assumenda dicta dolore quisquam
+                    totam repellat ratione beatae non pariatur.*/</p>
+                <div class="form-group">
+                    <label class="feedback" for="exampleFormControlTextarea1">Enter Feedback</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="feedback" rows="3"></textarea>
+                </div>
+                <button class="btn" type="submit">submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{url_for('static',filename='javascript/questions.js')}}"></script>
+</body>
+
+
+</html>

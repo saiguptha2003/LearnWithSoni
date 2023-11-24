@@ -1,0 +1,87 @@
+{% from 'utility.html' import header,meta,jslinks,stylelink,example %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {{meta()}}
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+  </head>
+    <style>
+      body {
+        
+        text-align: center;
+        padding: 40px 0;
+        background: #EBF0F5;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+      }
+        h1 {
+          color: #5081DB;
+          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+          font-weight: 900;
+          font-size: 40px;
+          margin-bottom: 10px;
+        }
+        p {
+          color: #404F5E;
+          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+          font-size:20px;
+          margin: 0;
+        }
+      i {
+        color: #5081DB;
+        font-size: 100px;
+        line-height: 200px;
+        margin-left:-15px;
+      }
+      .card {
+        background: white;
+        padding: 60px;
+        border-radius: 4px;
+        box-shadow: 0 2px 3px #C8D0D8;
+        display: inline-block;
+        margin: 0 auto;
+      }
+      .btn{
+        background-color: #5081DB;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-weight: bolder;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+
+      }
+    </style>
+    <body onmousedown="return false" onselectstart="return false">
+      <div class="card">
+      <div style="border-radius:200px; height:200px; width:200px; background: #dfe9fb; margin:0 auto;">
+        <i class="checkmark">✓</i>
+      </div>
+        <h1>Successfully Submitted</h1> 
+        <p style="color: black; font-weight:bolder;">Hey {{firstname}}</p>
+        {% if count >= 7 %}
+        <p style="color: rgb(38, 255, 0); font-weight:bolder;">That was mindblowing. You scored {{count}} on 10</p>
+        {% elif count >= 4 %}
+        <p style="color: rgb(0, 115, 255); font-weight:bolder;">That was cool. You scored {{count}} on 10</p>
+        {% else %}
+        <p style="color: rgb(201, 40, 40); font-weight:bolder;">That was tough maybe. You scored {{count}} on 10</p>
+        {% endif %}
+        <p style="color: black; font-weight:bolder;">See you later! </p>
+        <a href="{{url_for('dashboard')}}"><button class="btn">Back to Dashboard</button></a>
+      </div>
+    </body>
+</html>
+
+
+<!-- Hey __ (name of the student)
+That was mindblowing. You scored _ on 10. (if the score is 70+)
+That was cool. You scored __ on 10. (if the score is 40+)
+That was tough maybe. You scored __ on 10 (if the score is less than 40)
+See you later!  -->
